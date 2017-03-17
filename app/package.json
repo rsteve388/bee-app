@@ -1,0 +1,34 @@
+{
+  "name": "bee_app",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "font-awesome": "^4.7.0",
+    "leaflet": "^1.0.3",
+    "lodash": "^4.17.4",
+    "rc-slider": "^6.1.2",
+    "re-bulma": "^0.3.1",
+    "react": "15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-dom": "15.4.2",
+    "react-leaflet": "^1.1.0",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "sql.js": "^0.4.0"
+  },
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "react-scripts": "0.9.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
+  }
+}
