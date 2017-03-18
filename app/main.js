@@ -16,13 +16,13 @@ function createWindow() {
     mainWindow = new BrowserWindow({width: 1000, height: 800});
 
     // and load the index.html of the app.
-    // mainWindow.loadURL('http://localhost:3000');
-    const startUrl = process.env.ELECTRON_START_URL || url.format({
-            pathname: path.join(__dirname, '/src/index.html'),
-            protocol: 'file:',
-            slashes: true
-        });
-    mainWindow.loadURL(startUrl);
+    mainWindow.loadURL('http://localhost:3000');
+      // const startUrl = process.env.ELECTRON_START_URL || url.format({
+      //         pathname: path.join(__dirname, '/src/index.html'),
+      //         protocol: 'file:',
+      //         slashes: true
+      //     });
+      // mainWindow.loadURL(startUrl);
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();

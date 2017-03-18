@@ -28,6 +28,8 @@ export const mapDispatchToProps = (dispatch) => {
     return {
         toggleFlower: (e) => {
             const flower = e.target.id;
+            console.log(flower)
+            //TODO: alter logic so it doens't depend on the e.target.checked to decide which action to dispatch 
             dispatch(e.target.checked ? actions.addFlower(flower) : actions.removeFlower(flower))
         },
 

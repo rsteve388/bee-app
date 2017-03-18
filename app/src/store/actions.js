@@ -10,6 +10,7 @@ const fs = electron.remote.require('fs');
 
 
 export const addFlower = (flower) => {
+    console.log('hi')
     return {
         type: t.ADD_FLOWER,
         flower

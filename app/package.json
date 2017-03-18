@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "electron": "^1.4.1",
-    "react-scripts": "0.9.1"
+    "react-scripts": "0.9.1",
+    "remote-redux-devtools": "^0.5.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,6 +30,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
+    "electron-dev-osx": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "electron-dev-win": "set ELECTRON_START_URL=http://localhost:3000 && electron ."
   }
 }

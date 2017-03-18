@@ -38,12 +38,19 @@
 }
 
 .run-btn{
-    bottom: 30px;
+    bottom: 10px;
     position: absolute;
     width: calc(100% - 20px);
 }
+
+.add-btn{
+    bottom: 10px;
+    position: absolute;
+    width: calc(100% - 20px);
+}
+
 .placement-notification{
-    bottom: 30px;
+    bottom: 10px;
     position: absolute;
     width: calc(100% - 20px);
     display: block;
@@ -69,4 +76,16 @@
 .navbar-icon:hover{
     color: #cccccc;
     cursor: pointer;
+}
+.delete-icon{
+  float: right;
+  padding: 1px
+}
+.flower-item{
+  padding: 2px;
+  border-radius: 2px
+}
+
+.flower-item:hover{
+  background-color: rgba(190, 174, 26, 0.71)
 }
