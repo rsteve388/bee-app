@@ -10,7 +10,6 @@ const fs = electron.remote.require('fs');
 
 
 export const addFlower = (flower) => {
-    console.log('hi')
     return {
         type: t.ADD_FLOWER,
         flower
@@ -27,23 +26,34 @@ export const removeFlower = (flower) => {
 export const updatePlacement = (id, val) => {
     return {
         type: t.UPDATE_PLACEMENT,
-        update: {id: id,
-                val: val}
+        update: {
+            id: id,
+            val: val
+        }
     }
 }
 
 export const connectDatabase = (path) => {
-    console.log('initiated db upload!')
-    // console.log(path)
-    const fileBuffer = fs.readFileSync(path)
-    const db = new sql.Database(fileBuffer)
-    var flowerTable = db.exec('select * from flowers;')
-    var areaTable = db.exec('select * from study_areas;')
-
-
-    // console.log(res)
     return {
         type: t.CONNECT_DATABASE,
-        dbData: [flowerTable, areaTable]
+        dbDataPath: path
+    }
+}
+
+export const addFlowerDB = (newFlower) => {
+    const newFlowerVals = newFlower
+
+    return {
+        type: t.ADD_FLOWER_DB,
+        newFlowerVals
+    }
+}
+
+export const removeFlowerDB = (flowerId) => {
+    console.log('flower to be removed: ' + flowerId)
+
+    return {
+        type: t.REMOVE_FLOWER_DB,
+        flowerId
     }
 }

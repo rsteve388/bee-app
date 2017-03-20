@@ -79,7 +79,13 @@
 }
 .delete-icon{
   float: right;
-  padding: 1px
+  padding: 1px;
+  color: white;
+  padding: 2px
+}
+.delete-icon:hover{
+  cursor: pointer;
+  color: #cccccc;
 }
 .flower-item{
   padding: 2px;

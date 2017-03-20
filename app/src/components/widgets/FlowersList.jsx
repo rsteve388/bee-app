@@ -18,15 +18,48 @@ class FlowersList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            addModalState: false
+            addModalState: false,
+            newFlowerIndex: '',
+            newFlowerName: '',
+            newFlowerRadius: ''
         }
         this.toggleModal = this.toggleModal.bind(this)
+        this.submitNewFlower = this.submitNewFlower.bind(this)
+        this.deleteFlower = this.deleteFlower.bind(this)
+        this.handleNameChange = this.handleNameChange.bind(this)
+        this.handleIndexChange = this.handleIndexChange.bind(this)
+        this.handleRadiusChange = this.handleRadiusChange.bind(this)
     }
 
     toggleModal() {
         this.setState({
             addModalState: !this.state.addModalState
         })
+    }
+
+    deleteFlower(e) {
+        console.log(e)
+        this.props.removeFlowerDB(e)
+    }
+
+    submitNewFlower() {
+        const newFlowerNameVal = this.state.newFlowerName
+        const newFlowerIndexVal = this.state.newFlowerIndex
+        const newFlowerRadiusVal = this.state.newFlowerRadius
+
+        this.props.addNewFlowerDB({newFlowerNameVal, newFlowerIndexVal, newFlowerRadiusVal})
+    }
+
+    handleNameChange(event) {
+        this.setState({newFlowerName: event.target.value});
+    }
+
+    handleIndexChange(event) {
+        this.setState({newFlowerIndex: event.target.value});
+    }
+
+    handleRadiusChange(event) {
+        this.setState({newFlowerRadius: event.target.value});
     }
 
     render() {
@@ -36,11 +69,11 @@ class FlowersList extends Component {
 
         const plants = this.props.plants_list.map((plant) => {
             return <li key={'flower_' + plant.plant_id} className="flower-item" id={plant.plant_id} onClick={this.props.toggleFlower}>
-                <input type="checkbox"  checked={(this.props.use_plants.length == 0
+                <input type="checkbox" checked={(this.props.use_plants.length == 0
                     ? false
                     : this.props.use_plants.forEach((plantOnList) => (plantOnList.plant_id == plant.plant_id)))} id={plant.plant_id}/>
-                  <label id={plant.plant_id}>{plant.plant_name}</label>
-                <i className="fa fa-times-circle delete-icon" />
+                <label id={plant.plant_id}>{plant.plant_name}</label>
+                <i className="fa fa-times-circle delete-icon" onClick={this.deleteFlower.bind(this, plant.plant_id)}/>
             </li>
         })
 
@@ -48,10 +81,12 @@ class FlowersList extends Component {
             <Modal type="card" headerContent="Add a new flower to the Database" isActive={this.state.addModalState} onCloseRequest={() => this.setState({addModalState: false})}>
                 <Content>
                     <Label>Flower Name</Label>
-                    <Input type="text" placeholder="Text input"/>
+                    <Input type="text" placeholder="Flower Name" onChange={this.handleNameChange}/>
                     <Label>Flower Index</Label>
-                    <Input type="number" placeholder="Text input"/>
-                    <Button color="isSuccess" onClick={this.getpath}>Add Flower</Button>
+                    <Input type="number" placeholder="Flower Index" onChange={this.handleIndexChange}/>
+                    <Label>Flower Radius</Label>
+                    <Input type="number" placeholder="Flower Radius" onChange={this.handleRadiusChange}/>
+                    <Button color="isSuccess" onClick={this.submitNewFlower.bind(this)}>Add Flower</Button>
                 </Content>
             </Modal>
             <Subtitle style={letterstyle}>2. Flower List</Subtitle>

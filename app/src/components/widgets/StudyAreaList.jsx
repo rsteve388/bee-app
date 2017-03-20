@@ -10,7 +10,6 @@ class StudyAreasList extends Component{
 
     render(){
         var letterstyle = {color: "white"}
-        console.log(this.props.areas_list)
         const areas = this.props.areas_list.map((area) =>
             <li key={"study_area_" + area.area_id}>
                 <Checkbox>{area.study_area}</Checkbox>

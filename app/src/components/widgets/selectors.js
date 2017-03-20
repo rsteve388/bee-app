@@ -28,8 +28,7 @@ export const mapDispatchToProps = (dispatch) => {
     return {
         toggleFlower: (e) => {
             const flower = e.target.id;
-            console.log(flower)
-            //TODO: alter logic so it doens't depend on the e.target.checked to decide which action to dispatch 
+            //TODO: alter logic so it doens't depend on the e.target.checked to decide which action to dispatch
             dispatch(e.target.checked ? actions.addFlower(flower) : actions.removeFlower(flower))
         },
 
@@ -39,6 +38,14 @@ export const mapDispatchToProps = (dispatch) => {
 
         loadDBFromDisk: (path) => {
             dispatch(actions.connectDatabase(path))
+        },
+
+        addNewFlowerDB: (newFlower) => {
+          dispatch(actions.addFlowerDB(newFlower))
+        },
+
+        removeFlowerDB: (flowerID) => {
+          dispatch(actions.removeFlowerDB(flowerID))
         }
 
     }
