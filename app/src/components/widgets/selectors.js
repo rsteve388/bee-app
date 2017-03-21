@@ -5,6 +5,8 @@ export const mapStateToProps = (state) => {
     const plants_list_arr = [];
     const areas_list_arr = [];
 
+    console.log(state)
+
     state.data.plants.forEach((plant) =>
         plants_list_arr.push(plant)
     )
@@ -46,7 +48,10 @@ export const mapDispatchToProps = (dispatch) => {
 
         removeFlowerDB: (flowerID) => {
           dispatch(actions.removeFlowerDB(flowerID))
-        }
+        },
 
+        addNewAreaDB: (newArea) => {
+          dispatch(actions.addAreaDB(newArea))
+        }
     }
 }

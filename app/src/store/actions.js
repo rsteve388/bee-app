@@ -57,3 +57,12 @@ export const removeFlowerDB = (flowerId) => {
         flowerId
     }
 }
+
+export const addAreaDB = (newArea) => {
+    console.log('area to be added: ' + newArea)
+
+    return {
+        type: t.ADD_AREA_DB,
+        newArea
+    }
+}

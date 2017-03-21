@@ -10,3 +10,4 @@ export const CONNECT_DATABASE = 'app/CONNECT_DATABASE';
 export const LOAD_DATABASE = 'app/LOAD_DATABASE';
 export const ADD_FLOWER_DB = 'app/ADD_FLOWER_DB';
 export const REMOVE_FLOWER_DB = 'app/REMOVE_FLOWER_DB';
+export const ADD_AREA_DB = 'app/ADD_AREA_DB';

@@ -8,8 +8,7 @@ const fs = electron.remote.require('fs');
 const initialData = {
     plants: [],
     study_areas: [],
-    use_plants: [],
-    modalState: true
+    use_plants: []
 };
 
 export default (state = initialData, action) => {
@@ -117,6 +116,36 @@ export default (state = initialData, action) => {
                 study_areas: parsedData[1],
             };
 
+        case t.ADD_AREA_DB:
+        var loadedDB = state.dbObj
+        var loadedDBPath = state.dbPath
+
+        console.log(action)
+
+        const newAreaNameVal = action.newArea.newAreaNameVal
+        const newAreaDescriptionVal = action.newArea.newAreaDescriptionVal
+        const newAreaGeomVal = action.newArea.newAreaGeomVal
+
+        loadedDB.run("INSERT INTO study_areas (study_area, study_descr, geom) VALUES (:name, :descr, :geom)", {
+            ':name': newAreaNameVal,
+            ':descr': newAreaDescriptionVal,
+            ':geom': newAreaGeomVal
+        });
+
+        fs.writeFile(loadedDBPath, loadedDB.export())
+
+        loadedDB.close()
+
+        var fileBuffer = fs.readFileSync(state.dbPath)
+        var newDB = new sql.Database(fileBuffer)
+        var parsedData = parseDB(newDB)
+
+        return {
+            ...state,
+            dbObj: newDB,
+            plants: parsedData[0],
+            study_areas: parsedData[1],
+        };
 
         default:
             return state
