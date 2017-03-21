@@ -12,17 +12,20 @@ class StudyAreasList extends Component{
         var letterstyle = {color: "white"}
         const areas = this.props.areas_list.map((area) =>
             <li key={"study_area_" + area.area_id}>
-                <Checkbox>{area.study_area}</Checkbox>
+                <input type="checkbox" />
+                <label id={area.areas_id}>{area.study_area}</label>
             </li>)
         return <div>
         <Subtitle style={letterstyle}>1. Study Areas</Subtitle>
-        <Menu>
+
+        <Menu >
             <MenuList>
             <ul>
                 {areas}
             </ul>
             </MenuList>
             </Menu>
+
         </div>
 
     }
