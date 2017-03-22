@@ -48,6 +48,10 @@ class FlowersList extends Component {
         const newFlowerRadiusVal = this.state.newFlowerRadius
 
         this.props.addNewFlowerDB({newFlowerNameVal, newFlowerIndexVal, newFlowerRadiusVal})
+
+        this.setState({
+            addModalState: !this.state.addModalState
+        })
     }
 
     handleNameChange(event) {
