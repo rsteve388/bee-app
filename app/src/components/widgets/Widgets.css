@@ -105,6 +105,10 @@
 
 .menu-list{
     overflow-y: scroll;
-    max-height: calc(40vh - 40px);
-    margin-bottom: 40px
+    max-height: calc(40vh - 45px);
+    margin-bottom: 40px;
+    margin-top: 5px;
+    box-shadow: inset 0 0 5px #000000;
+    background-color: #dec160;
+    border-radius: 3px;
 }
