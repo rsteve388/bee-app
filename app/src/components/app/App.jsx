@@ -30,14 +30,14 @@ class App extends Component {
           <Tile isVertical size="is12">
             <Tile>
               <Tile context="isParent" size="is6">
-                <Tile context="isChild" style={style} className="input-tile">
+                <Tile context="isChild" style={style} className="map-tile">
                     <Subtitle style={letterstyle}>Region of Study</Subtitle>
                     <Map/>
                 </Tile>
               </Tile>
               <Tile isVertical>
 
-                <Tile>
+                <Tile className="upper-tiles">
                   <Tile context="isParent" size="is6">
                     <Tile context="isChild" style={style} className="input-tile">
                       <StudyAreasList/>
@@ -50,7 +50,7 @@ class App extends Component {
                   </Tile>
                 </Tile>
 
-                <Tile>
+                <Tile className="bottom-tiles">
                   <Tile context="isParent" size="is6">
                     <Tile context="isChild" style={style} className="input-tile">
                       <PlaceFlowers/>

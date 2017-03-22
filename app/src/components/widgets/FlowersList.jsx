@@ -90,13 +90,11 @@ class FlowersList extends Component {
                 </Content>
             </Modal>
             <Subtitle style={letterstyle}>2. Flower List</Subtitle>
-            <Menu>
-                <MenuList>
-                    <ul>
-                        {plants}
-                    </ul>
-                </MenuList>
-            </Menu>
+            <div className="menu-list">
+                <Menu>
+                    <MenuList>{plants}</MenuList>
+                </Menu>
+            </div>
             <Button color="isPrimary" className="add-btn" onClick={this.toggleModal}>Add Flower</Button>
         </div>
 

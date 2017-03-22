@@ -26,7 +26,8 @@ class MainMap extends Component {
             editModal: false,
             newAreaName: '',
             newAreaDescription: '',
-            newAreaGeom: ''
+            newAreaGeom: '',
+            popupOpen: true
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
@@ -87,17 +88,33 @@ class MainMap extends Component {
                             polyline: false,
                             marker: false
                         }}/>
-                      <Popup isOpen='true'>
+                        {(this.state.popupOpen) ? (
+                            <Popup isOpen='true'>
                                 <Content>
-                                <Label>Area Name</Label>
-                                <Input type="text" placeholder="Arena Name" onChange={this.handleNameChange}/>
-                                <Label>Study Area Description</Label>
-                                <Input type="text" placeholder="Study Area Description" onChange={this.handleDescriptionChange}/>
-                                <Button color="isSuccess" onClick={this.submitArea}>Add Area</Button>
-                            </Content>
-                        </Popup>
+                                    <Label>Area Name</Label>
+                                    <Input type="text" placeholder="Arena Name" onChange={this.handleNameChange}/>
+                                    <Label>Study Area Description</Label>
+                                    <Input type="text" placeholder="Study Area Description" onChange={this.handleDescriptionChange}/>
+                                    <Button color="isSuccess" onClick={this.submitArea}>Add Area</Button>
+                                </Content>
+                            </Popup>
+                        ) : null
+                        }
                     </FeatureGroup>
                 </Map>
+                <Modal
+                    isActive={this.state.editModal}
+                    type="card"
+                    headerContent="Add this Study Area to the Database"
+                    onCloseRequest={() => this.setState({ editModal: false })}>
+                    <Content>
+                        <Label>Area Name</Label>
+                        <Input type="text" placeholder="Arena Name" onChange={this.handleNameChange}/>
+                        <Label>Study Area Description</Label>
+                        <Input type="text" placeholder="Study Area Description" onChange={this.handleDescriptionChange}/>
+                        <Button color="isSuccess" onClick={this.submitArea}>Add Area</Button>
+                    </Content>
+                </Modal>
             </div>
         )
     }

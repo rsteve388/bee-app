@@ -43,7 +43,7 @@
 }
 
 .tool-lists{
-  height: 300px;
+  min-height: 300px;
   width: 43%;
   margin: 20px;
   margin-top: 70px;
@@ -57,4 +57,9 @@
   margin-right: 10px !important;
   height: calc(100vh - 60px);
 }
-
+.upper-tiles{
+  max-height: 50%
+}
+.bottom-tiles{
+  min-height: 50%
+}

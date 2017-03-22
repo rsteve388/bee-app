@@ -157,31 +157,41 @@ function parseDB (db){
 
   var flowerTable = db.exec('select * from flowers;')
   var areaTable = db.exec('select * from study_areas;')
-  const flower_cols = flowerTable[0].columns
-  const flower_rows = flowerTable[0].values
-  const allFlowers = []
 
-  flower_rows.map((record) => {
-      var obj = {}
-      obj[flower_cols[0]] = record[0]
-      obj[flower_cols[1]] = record[1]
-      obj[flower_cols[2]] = record[2]
-      obj[flower_cols[3]] = record[3]
-      allFlowers.push(obj)
-  })
+    console.log(flowerTable, areaTable)
 
-  const area_cols = areaTable[0].columns
-  const area_rows = areaTable[0].values
-  const allAreas = []
+    const allFlowers = []
+    const allAreas = []
 
-  area_rows.map((record) => {
-      var obj = {}
-      obj[area_cols[0]] = record[0]
-      obj[area_cols[1]] = record[1]
-      obj[area_cols[2]] = record[2]
-      obj[area_cols[3]] = record[3]
-      allAreas.push(obj)
-  })
+    if(flowerTable.length > 0) {
+        const flower_cols = flowerTable[0].columns
+        const flower_rows = flowerTable[0].values
+
+
+        flower_rows.map((record) => {
+            var obj = {}
+            obj[flower_cols[0]] = record[0]
+            obj[flower_cols[1]] = record[1]
+            obj[flower_cols[2]] = record[2]
+            obj[flower_cols[3]] = record[3]
+            allFlowers.push(obj)
+        })
+    }
+
+    if (areaTable.length > 0) {
+        const area_cols = areaTable[0].columns
+        const area_rows = areaTable[0].values
+
+
+        area_rows.map((record) => {
+            var obj = {}
+            obj[area_cols[0]] = record[0]
+            obj[area_cols[1]] = record[1]
+            obj[area_cols[2]] = record[2]
+            obj[area_cols[3]] = record[3]
+            allAreas.push(obj)
+        })
+    }
 
   return [allFlowers, allAreas]
 }

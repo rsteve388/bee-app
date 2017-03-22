@@ -58,6 +58,12 @@
     box-sizing: border-box;
 }
 
+.map-tile{
+    background-color: #deb638;
+    box-shadow: 0 2px  5px #130606;
+    /*max-height: 50%;*/
+}
+
 .input-tile{
     background-color: #deb638;
     box-shadow: 0 2px  5px #130606;
@@ -67,6 +73,7 @@
     background-color: #6aa2de;
     box-shadow: 0 2px  5px #130606;
     color: #00A707 !important;
+    max-height: 100%;
 }
 
 .navbar-icon{
@@ -79,9 +86,9 @@
 }
 .delete-icon{
   float: right;
-  padding: 1px;
   color: white;
-  padding: 2px
+  padding: 2px;
+  padding-right: 10px
 }
 .delete-icon:hover{
   cursor: pointer;
@@ -94,4 +101,9 @@
 
 .flower-item:hover{
   background-color: rgba(190, 174, 26, 0.71)
+}
+.menu-list{
+    overflow-y: scroll;
+    max-height: calc(40vh - 40px);
+    margin-bottom: 40px
 }
