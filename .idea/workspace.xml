@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8e869b9d-1044-41fc-a198-3ee41e35b29a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bee_db.db" afterPath="$PROJECT_DIR$/bee_db.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" afterPath="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" afterPath="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/Widgets.css" afterPath="$PROJECT_DIR$/app/src/components/widgets/Widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/selectors.js" afterPath="$PROJECT_DIR$/app/src/components/widgets/selectors.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/store/action-types.js" afterPath="$PROJECT_DIR$/app/src/store/action-types.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/store/actions.js" afterPath="$PROJECT_DIR$/app/src/store/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/store/reducers/data.js" afterPath="$PROJECT_DIR$/app/src/store/reducers/data.js" />
     </list>
     <ignored path="bee_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +33,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConnectDB.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/widgets/ConnectDB.jsx">
+      <file leaf-file-name="StudyAreaList.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="37" column="75" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="75" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="28" column="102" selection-start-line="28" selection-start-column="102" selection-end-line="28" selection-end-column="102" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,42 +48,30 @@
       <file leaf-file-name="Widgets.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/components/widgets/Widgets.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
+            <state relative-caret-position="225">
+              <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudyAreaList.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
+      <file leaf-file-name="selectors.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/widgets/selectors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="267">
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
               <folding>
-                <marker date="1490153588000" expanded="false" signature="7:15" ph="..." />
+                <element signature="e#0#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/app/App.jsx">
+      <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/store/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-              <folding>
-                <marker date="1490153588000" expanded="true" signature="729:781" ph="/*...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/app/App.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+            <state relative-caret-position="342">
+              <caret line="73" column="30" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -83,11 +80,21 @@
       <file leaf-file-name="FlowersList.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="117">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/store/reducers/data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,19 +115,19 @@
         <option value="$PROJECT_DIR$/app/src/components/map/selectors.js" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/PlantsList.jsx" />
         <option value="$PROJECT_DIR$/app/package.json" />
-        <option value="$PROJECT_DIR$/app/src/store/action-types.js" />
-        <option value="$PROJECT_DIR$/app/src/components/widgets/selectors.js" />
         <option value="$PROJECT_DIR$/app/main.js" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/ConnectDB.jsx" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/PlaceFlowers.jsx" />
-        <option value="$PROJECT_DIR$/app/src/store/actions.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/src/components/map/Map.jsx" />
-        <option value="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" />
-        <option value="$PROJECT_DIR$/app/src/store/reducers/data.js" />
         <option value="$PROJECT_DIR$/app/src/components/app/App.jsx" />
         <option value="$PROJECT_DIR$/app/src/components/app/App.css" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" />
+        <option value="$PROJECT_DIR$/app/src/store/actions.js" />
+        <option value="$PROJECT_DIR$/app/src/components/widgets/selectors.js" />
+        <option value="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" />
+        <option value="$PROJECT_DIR$/app/src/store/action-types.js" />
+        <option value="$PROJECT_DIR$/app/src/store/reducers/data.js" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/Widgets.css" />
       </list>
     </option>
@@ -433,12 +440,12 @@
       <workItem from="1488770828692" duration="67299000" />
       <workItem from="1489712964728" duration="1410000" />
       <workItem from="1489715098717" duration="8000" />
-      <workItem from="1489986000683" duration="3464000" />
+      <workItem from="1489986000683" duration="5779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72181000" />
+    <option name="totallyTimeSpent" value="74496000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -731,13 +738,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/widgets/Counter.jsx" />
-    <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/widgets/Results.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -790,42 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/PlaceFlowers.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/store/action-types.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/selectors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/store/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -852,40 +816,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1490153588000" expanded="false" signature="7:15" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/store/reducers/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/app/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
           <folding>
             <marker date="1490153588000" expanded="true" signature="729:781" ph="/*...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -898,10 +834,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/PlaceFlowers.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/selectors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/store/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="73" column="30" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/store/action-types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="102" selection-start-line="28" selection-start-column="102" selection-end-line="28" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/store/reducers/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/widgets/Widgets.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
+        <state relative-caret-position="225">
+          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
           <folding />
         </state>
       </provider>

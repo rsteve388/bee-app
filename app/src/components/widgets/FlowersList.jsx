@@ -72,7 +72,7 @@ class FlowersList extends Component {
         };
 
         const plants = this.props.plants_list.map((plant) => {
-            return <li key={'flower_' + plant.plant_id} className="flower-item" id={plant.plant_id} onClick={this.props.toggleFlower}>
+            return <li key={'flower_' + plant.plant_id} className="input-item" id={plant.plant_id} onClick={this.props.toggleFlower}>
                 <input type="checkbox" checked={(this.props.use_plants.length == 0
                     ? false
                     : this.props.use_plants.forEach((plantOnList) => (plantOnList.plant_id == plant.plant_id)))} id={plant.plant_id}/>

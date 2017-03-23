@@ -66,3 +66,12 @@ export const addAreaDB = (newArea) => {
         newArea
     }
 }
+
+export const removeAreaDB = (areaId) => {
+    console.log('area to be removed: ' + areaId)
+
+    return {
+        type: t.REMOVE_AREA_DB,
+        areaId
+    }
+}

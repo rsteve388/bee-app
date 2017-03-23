@@ -147,6 +147,30 @@ export default (state = initialData, action) => {
             study_areas: parsedData[1],
         };
 
+        case t.REMOVE_AREA_DB:
+            console.log(state)
+            var loadedDB = state.dbObj
+            var loadedDBPath = state.dbPath
+
+            loadedDB.run("DELETE FROM study_areas WHERE area_id = :id", {
+                ':id': action.areaId
+            });
+
+            fs.writeFile(loadedDBPath, loadedDB.export())
+
+            loadedDB.close()
+
+            var fileBuffer = fs.readFileSync(state.dbPath)
+            var newDB = new sql.Database(fileBuffer)
+            var parsedData = parseDB(newDB)
+
+            return {
+                ...state,
+                dbObj: newDB,
+                plants: parsedData[0],
+                study_areas: parsedData[1],
+            };
+
         default:
             return state
     }

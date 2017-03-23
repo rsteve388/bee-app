@@ -52,6 +52,10 @@ export const mapDispatchToProps = (dispatch) => {
 
         addNewAreaDB: (newArea) => {
           dispatch(actions.addAreaDB(newArea))
+        },
+
+        removeAreaDB: (areaID) => {
+            dispatch(actions.removeAreaDB(areaID))
         }
     }
 }
