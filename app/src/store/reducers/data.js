@@ -60,7 +60,6 @@ export default (state = initialData, action) => {
 
 
         case t.ADD_FLOWER_DB:
-            console.log(state)
             let loadedDB = state.dbObj
             let loadedDBPath = state.dbPath
 
@@ -93,7 +92,6 @@ export default (state = initialData, action) => {
             };
 
         case t.REMOVE_FLOWER_DB:
-            console.log(state)
             var loadedDB = state.dbObj
             var loadedDBPath = state.dbPath
 
@@ -119,8 +117,6 @@ export default (state = initialData, action) => {
         case t.ADD_AREA_DB:
         var loadedDB = state.dbObj
         var loadedDBPath = state.dbPath
-
-        console.log(action)
 
         const newAreaNameVal = action.newArea.newAreaNameVal
         const newAreaDescriptionVal = action.newArea.newAreaDescriptionVal
@@ -148,7 +144,6 @@ export default (state = initialData, action) => {
         };
 
         case t.REMOVE_AREA_DB:
-            console.log(state)
             var loadedDB = state.dbObj
             var loadedDBPath = state.dbPath
 
@@ -181,8 +176,6 @@ function parseDB (db){
 
   var flowerTable = db.exec('select * from flowers;')
   var areaTable = db.exec('select * from study_areas;')
-
-    console.log(flowerTable, areaTable)
 
     const allFlowers = []
     const allAreas = []

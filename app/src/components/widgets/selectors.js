@@ -5,8 +5,6 @@ export const mapStateToProps = (state) => {
     const plants_list_arr = [];
     const areas_list_arr = [];
 
-    console.log(state)
-
     state.data.plants.forEach((plant) =>
         plants_list_arr.push(plant)
     )

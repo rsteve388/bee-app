@@ -108,7 +108,7 @@
 }
 
 .menu-list{
-    overflow-y: scroll;
+    overflow-y: auto;
     height: calc(40vh - 60px);
     margin-bottom: 40px;
     margin-top: 5px;

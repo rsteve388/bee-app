@@ -55,6 +55,10 @@ class MainMap extends Component {
         const newAreaGeomVal = this.state.newAreaGeom
 
         this.props.addNewAreaDB({newAreaNameVal, newAreaDescriptionVal, newAreaGeomVal})
+
+        this.setState({
+            editModal: !this.state.editModal
+        })
     }
 
     toggleModal() {
@@ -71,8 +75,12 @@ class MainMap extends Component {
         console.log(this.state)
     }
 
-    _onEditPath(e) {
-        console.log('Path edited !');
+    _mounted(drawControl) {
+        console.log('Component mounted !');
+        console.log(drawControl)
+        setTimeout(() => {
+            drawControl._toolbars.draw._modes.circle.handler.enable();
+        }, 200)
     }
 
     render() {
@@ -82,31 +90,15 @@ class MainMap extends Component {
                     <ZoomControl position='topright'/>
                     <TileLayer url="http://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png" attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'/>
                     <FeatureGroup>
-                        <EditControl position='topright' onEdited={this._onEditPath} onCreated={this._onCreate} onDeleted={this._onDeleted} draw={{
+                        <EditControl position='topright' onEdited={this._onEditPath} onCreated={this._onCreate} onDeleted={this._onDeleted} onMounted={this._mounted} draw={{
                             polygon: false,
-                            circle: false,
+                            circle: true,
                             polyline: false,
                             marker: false
                         }}/>
-                        {(this.state.popupOpen) ? (
-                            <Popup isOpen='true'>
-                                <Content>
-                                    <Label>Area Name</Label>
-                                    <Input type="text" placeholder="Arena Name" onChange={this.handleNameChange}/>
-                                    <Label>Study Area Description</Label>
-                                    <Input type="text" placeholder="Study Area Description" onChange={this.handleDescriptionChange}/>
-                                    <Button color="isSuccess" onClick={this.submitArea}>Add Area</Button>
-                                </Content>
-                            </Popup>
-                        ) : null
-                        }
                     </FeatureGroup>
                 </Map>
-                <Modal
-                    isActive={this.state.editModal}
-                    type="card"
-                    headerContent="Add this Study Area to the Database"
-                    onCloseRequest={() => this.setState({ editModal: false })}>
+                <Modal isActive={this.state.editModal} type="card" headerContent="Add this Study Area to the Database" onCloseRequest={() => this.setState({editModal: false})}>
                     <Content>
                         <Label>Area Name</Label>
                         <Input type="text" placeholder="Arena Name" onChange={this.handleNameChange}/>
