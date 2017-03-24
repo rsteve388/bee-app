@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {mapStateToProps, mapDispatchToProps} from './selectors';
 import {connect} from 'react-redux';
-import {Map, TileLayer, ZoomControl, FeatureGroup, Popup} from 'react-leaflet';
+import {Map, TileLayer, ZoomControl, FeatureGroup} from 'react-leaflet';
 import {EditControl} from "react-leaflet-draw"
 import {
-    Menu,
-    MenuList,
-    Subtitle,
     Button,
     Modal,
     Content,
@@ -19,6 +16,8 @@ import '../../../node_modules/leaflet/dist/leaflet.css'
 import '../../../node_modules/leaflet-draw/dist/leaflet.draw.css'
 
 let layer;
+let drawHandlerObj;
+
 class MainMap extends Component {
     constructor(props) {
         super(props)
@@ -27,7 +26,7 @@ class MainMap extends Component {
             newAreaName: '',
             newAreaDescription: '',
             newAreaGeom: '',
-            popupOpen: true
+            addAreaHandler: false
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
@@ -35,6 +34,8 @@ class MainMap extends Component {
         this.submitArea = this.submitArea.bind(this)
         this.toggleModal = this.toggleModal.bind(this)
         this._onCreate = this._onCreate.bind(this)
+        this.toggleAddAreaHandler = this.toggleAddAreaHandler.bind(this)
+        this._mounted = this._mounted.bind(this)
     }
 
     handleNameChange(event) {
@@ -57,7 +58,8 @@ class MainMap extends Component {
         this.props.addNewAreaDB({newAreaNameVal, newAreaDescriptionVal, newAreaGeomVal})
 
         this.setState({
-            editModal: !this.state.editModal
+            editModal: !this.state.editModal,
+            addAreaHandler: !this.state.addAreaHandler
         })
     }
 
@@ -72,15 +74,23 @@ class MainMap extends Component {
         this.toggleModal()
         console.log(JSON.stringify(layer.toGeoJSON()))
         this.handleNewGeometry(JSON.stringify(layer.toGeoJSON()))
-        console.log(this.state)
     }
 
     _mounted(drawControl) {
-        console.log('Component mounted !');
         console.log(drawControl)
-        setTimeout(() => {
-            drawControl._toolbars.draw._modes.circle.handler.enable();
-        }, 200)
+        drawHandlerObj = drawControl._toolbars.draw._modes.rectangle.handler;
+    }
+
+    toggleAddAreaHandler() {
+        if (this.state.addAreaHandler) {
+            drawHandlerObj.disable()
+        } else {
+            drawHandlerObj.enable()
+        }
+
+        this.setState({
+            addAreaHandler: !this.state.addAreaHandler
+        })
     }
 
     render() {
@@ -92,12 +102,16 @@ class MainMap extends Component {
                     <FeatureGroup>
                         <EditControl position='topright' onEdited={this._onEditPath} onCreated={this._onCreate} onDeleted={this._onDeleted} onMounted={this._mounted} draw={{
                             polygon: false,
-                            circle: true,
+                            circle: false,
                             polyline: false,
                             marker: false
                         }}/>
                     </FeatureGroup>
                 </Map>
+                {
+                    this.state.addAreaHandler ? <Button className="add-btn" color="isDanger" onClick={this.toggleAddAreaHandler}>Cancel</Button>
+                    : <Button className="add-btn" color="isPrimary" onClick={this.toggleAddAreaHandler}>Add New Area</Button>
+                }
                 <Modal isActive={this.state.editModal} type="card" headerContent="Add this Study Area to the Database" onCloseRequest={() => this.setState({editModal: false})}>
                     <Content>
                         <Label>Area Name</Label>

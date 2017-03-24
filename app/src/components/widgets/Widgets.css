@@ -41,12 +41,14 @@
     bottom: 10px;
     position: absolute;
     width: calc(100% - 20px);
+    box-shadow: 0 2px  3px #130606;
 }
 
 .add-btn{
     bottom: 10px;
     position: absolute;
     width: calc(100% - 20px);
+    box-shadow: 0 2px  3px #130606;
 }
 
 .placement-notification{

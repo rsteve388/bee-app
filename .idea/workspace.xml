@@ -4,13 +4,10 @@
     <list default="true" id="8e869b9d-1044-41fc-a198-3ee41e35b29a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bee_db.db" afterPath="$PROJECT_DIR$/bee_db.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/map/Map.css" afterPath="$PROJECT_DIR$/app/src/components/map/Map.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/map/Map.jsx" afterPath="$PROJECT_DIR$/app/src/components/map/Map.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" afterPath="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" afterPath="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/Widgets.css" afterPath="$PROJECT_DIR$/app/src/components/widgets/Widgets.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/widgets/selectors.js" afterPath="$PROJECT_DIR$/app/src/components/widgets/selectors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/store/action-types.js" afterPath="$PROJECT_DIR$/app/src/store/action-types.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/store/actions.js" afterPath="$PROJECT_DIR$/app/src/store/actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/store/reducers/data.js" afterPath="$PROJECT_DIR$/app/src/store/reducers/data.js" />
     </list>
     <ignored path="bee_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StudyAreaList.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
+      <file leaf-file-name="Map.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="28" column="102" selection-start-line="28" selection-start-column="102" selection-end-line="28" selection-end-column="102" />
+            <state relative-caret-position="275">
+              <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -45,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Widgets.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/components/widgets/Widgets.css">
+      <file leaf-file-name="Map.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/components/widgets/selectors.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+              <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -80,8 +77,8 @@
       <file leaf-file-name="FlowersList.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="1200">
+              <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -92,9 +89,17 @@
       <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/store/reducers/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="132">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+              <folding>
+                <marker date="1490321430000" expanded="true" signature="289:1880" ph="{...}" />
+                <marker date="1490321430000" expanded="true" signature="316:1880" ph="{...}" />
+                <marker date="1490321430000" expanded="true" signature="497:601" ph="{...}" />
+                <marker date="1490321430000" expanded="true" signature="745:827" ph="{&quot;use_plants&quot;: afterRemoved...}" />
+                <marker date="1490321430000" expanded="true" signature="1135:1367" ph="{...}" />
+                <marker date="1490321430000" expanded="true" signature="1659:1834" ph="{&quot;dbObj&quot;: db...}" />
+                <marker date="1490321430000" expanded="true" signature="5418:6336" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +116,6 @@
         <option value="$PROJECT_DIR$/app/src/components/widgets/ParamsList.jsx" />
         <option value="$PROJECT_DIR$/app/public/index.html" />
         <option value="$PROJECT_DIR$/app/src/index.css" />
-        <option value="$PROJECT_DIR$/app/src/components/map/Map.css" />
         <option value="$PROJECT_DIR$/app/src/components/map/selectors.js" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/PlantsList.jsx" />
         <option value="$PROJECT_DIR$/app/package.json" />
@@ -119,16 +123,17 @@
         <option value="$PROJECT_DIR$/app/src/components/widgets/ConnectDB.jsx" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/PlaceFlowers.jsx" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/src/components/map/Map.jsx" />
         <option value="$PROJECT_DIR$/app/src/components/app/App.jsx" />
         <option value="$PROJECT_DIR$/app/src/components/app/App.css" />
-        <option value="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" />
         <option value="$PROJECT_DIR$/app/src/store/actions.js" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/selectors.js" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx" />
         <option value="$PROJECT_DIR$/app/src/store/action-types.js" />
         <option value="$PROJECT_DIR$/app/src/store/reducers/data.js" />
+        <option value="$PROJECT_DIR$/app/src/components/map/Map.css" />
         <option value="$PROJECT_DIR$/app/src/components/widgets/Widgets.css" />
+        <option value="$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx" />
+        <option value="$PROJECT_DIR$/app/src/components/map/Map.jsx" />
       </list>
     </option>
   </component>
@@ -440,12 +445,12 @@
       <workItem from="1488770828692" duration="67299000" />
       <workItem from="1489712964728" duration="1410000" />
       <workItem from="1489715098717" duration="8000" />
-      <workItem from="1489986000683" duration="5779000" />
+      <workItem from="1489986000683" duration="11658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74496000" />
+    <option name="totallyTimeSpent" value="80375000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,7 +471,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34654918" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13656388" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -790,16 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="108" column="67" selection-start-line="108" selection-start-column="67" selection-end-line="108" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/widgets/ConnectDB.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -844,28 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/widgets/selectors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
@@ -888,29 +865,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
+    <entry file="file://$PROJECT_DIR$/app/src/store/reducers/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="102" selection-start-line="28" selection-start-column="102" selection-end-line="28" selection-end-column="102" />
+        <state relative-caret-position="132">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1490321430000" expanded="true" signature="289:1880" ph="{...}" />
+            <marker date="1490321430000" expanded="true" signature="316:1880" ph="{...}" />
+            <marker date="1490321430000" expanded="true" signature="497:601" ph="{...}" />
+            <marker date="1490321430000" expanded="true" signature="745:827" ph="{&quot;use_plants&quot;: afterRemoved...}" />
+            <marker date="1490321430000" expanded="true" signature="1135:1367" ph="{...}" />
+            <marker date="1490321430000" expanded="true" signature="1659:1834" ph="{&quot;dbObj&quot;: db...}" />
+            <marker date="1490321430000" expanded="true" signature="5418:6336" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/store/reducers/data.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/StudyAreaList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/widgets/Widgets.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+        <state relative-caret-position="296">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/widgets/FlowersList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/map/Map.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
