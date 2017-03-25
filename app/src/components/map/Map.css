@@ -9,3 +9,6 @@
   border-radius: 5px;
   z-index: 0;
 }
+.leaflet-draw{
+    display: none !important;
+}

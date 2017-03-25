@@ -23,6 +23,20 @@ export const removeFlower = (flower) => {
     }
 };
 
+export const addArea = (area) => {
+    return {
+        type: t.ADD_AREA,
+        area
+    }
+};
+
+export const removeArea = (area) => {
+    return {
+        type: t.REMOVE_AREA,
+        area
+    }
+};
+
 export const updatePlacement = (id, val) => {
     return {
         type: t.UPDATE_PLACEMENT,

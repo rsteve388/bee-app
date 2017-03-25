@@ -8,7 +8,8 @@ const fs = electron.remote.require('fs');
 const initialData = {
     plants: [],
     study_areas: [],
-    use_plants: []
+    use_plants: [],
+    use_area: null
 };
 
 export default (state = initialData, action) => {
@@ -40,6 +41,16 @@ export default (state = initialData, action) => {
                 use_plants: state.use_plants.map((plant) => plant.plant_id == action.update.id ? { ...plant,
                     plant_placement: action.update.val
                 } : plant)
+            };
+
+        case t.ADD_AREA:
+            console.log(state)
+            console.log(action)
+            const newArea = action.area
+
+            return {
+                ...state,
+                use_area: newArea
             };
 
         case t.CONNECT_DATABASE:

@@ -32,6 +32,7 @@ class MainMap extends Component {
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
         this.handleNewGeometry = this.handleNewGeometry.bind(this)
         this.submitArea = this.submitArea.bind(this)
+        this.cancelArea = this.cancelArea.bind(this)
         this.toggleModal = this.toggleModal.bind(this)
         this._onCreate = this._onCreate.bind(this)
         this.toggleAddAreaHandler = this.toggleAddAreaHandler.bind(this)
@@ -61,6 +62,19 @@ class MainMap extends Component {
             editModal: !this.state.editModal,
             addAreaHandler: !this.state.addAreaHandler
         })
+
+        this.refs.layergroup.leafletElement.removeLayer(layer)
+        this.toggleAddAreaHandler
+    }
+
+    cancelArea() {
+        let layer = this.state.newLayer
+        this.refs.layergroup.leafletElement.removeLayer(layer)
+
+        this.toggleModal()
+        this.setState({
+            addAreaHandler: !this.state.addAreaHandler
+        })
     }
 
     toggleModal() {
@@ -71,9 +85,13 @@ class MainMap extends Component {
 
     _onCreate(e) {
         layer = e.layer
+
         this.toggleModal()
-        console.log(JSON.stringify(layer.toGeoJSON()))
         this.handleNewGeometry(JSON.stringify(layer.toGeoJSON()))
+
+        this.setState({
+            newLayer: layer
+        })
     }
 
     _mounted(drawControl) {
@@ -93,13 +111,14 @@ class MainMap extends Component {
         })
     }
 
+
     render() {
         return (
             <div className='map-wrapper'>
-                <Map className='Map' center={[39.739800, -104.911276]} zoom={10} zoomControl={false}>
+                <Map className='Map' center={[39.739800, -104.911276]} zoom={10} zoomControl={false} ref="map">
                     <ZoomControl position='topright'/>
                     <TileLayer url="http://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png" attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'/>
-                    <FeatureGroup>
+                    <FeatureGroup ref="layergroup">
                         <EditControl position='topright' onEdited={this._onEditPath} onCreated={this._onCreate} onDeleted={this._onDeleted} onMounted={this._mounted} draw={{
                             polygon: false,
                             circle: false,
@@ -119,6 +138,7 @@ class MainMap extends Component {
                         <Label>Study Area Description</Label>
                         <Input type="text" placeholder="Study Area Description" onChange={this.handleDescriptionChange}/>
                         <Button color="isSuccess" onClick={this.submitArea}>Add Area</Button>
+                        <Button color="isDanger" onClick={this.cancelArea} style={{marginLeft: "10px"}}>Remove Area</Button>
                     </Content>
                 </Modal>
             </div>

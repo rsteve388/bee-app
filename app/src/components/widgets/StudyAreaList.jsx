@@ -22,10 +22,13 @@ class StudyAreasList extends Component {
 
     render(){
         var letterstyle = {color: "white"}
+        console.log(this.props.use_area)
         const areas = this.props.areas_list.map((area) =>
-            <li key={"study_area_" + area.area_id} className="input-item">
-                <input type="checkbox" />
-                <label id={area.areas_id}>{area.study_area}</label>
+            <li key={"study_area_" + area.area_id} className="input-item" id={area.area_id} onClick={this.props.toggleArea}>
+                <input type="checkbox" checked={(this.props.use_area != area.area_id
+                    ? false
+                    : true)} id={area.area_id}/>
+                <label id={area.area_id}>{area.study_area}</label>
                 <i className="fa fa-times-circle delete-icon" onClick={this.deleteArea.bind(this, area.area_id)}/>
             </li>)
         return <div>
