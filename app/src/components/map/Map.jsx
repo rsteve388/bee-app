@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {mapStateToProps, mapDispatchToProps} from './selectors';
 import {connect} from 'react-redux';
-import {Map, TileLayer, ZoomControl, FeatureGroup} from 'react-leaflet';
+import {Map, TileLayer, ZoomControl, FeatureGroup, GeoJSON, Popup} from 'react-leaflet';
 import {EditControl} from "react-leaflet-draw"
 import {
     Button,
@@ -88,7 +88,7 @@ class MainMap extends Component {
 
         this.toggleModal()
         this.handleNewGeometry(JSON.stringify(layer.toGeoJSON()))
-
+        console.log(layer)
         this.setState({
             newLayer: layer
         })
@@ -111,8 +111,26 @@ class MainMap extends Component {
         })
     }
 
+    componentWillReceiveProps(nextProps){
+        console.log(this.refs.layergroup.leafletElement)
+        if (this.refs.layergroup.leafletElement._leaflet !== undefined) {
+            this.refs.layergroup.leafletElement.removeLayer(this.refs.layergroup.leafletElement._layers[0]._layers[0]);
+        }
+        console.log(this.refs.layergroup.leafletElement)
+
+    }
+
 
     render() {
+        // clean this, make (this.props.use_area a variable and re-use it, fill area popup
+        if (this.props.use_area.length > 0 ) {
+            console.log(this.props.use_area)
+        }
+        const areaLayer = (this.props.use_area.length > 0 ?
+             <GeoJSON key={this.props.use_area["0"].area_id} data={JSON.parse(this.props.use_area["0"].geom)}>
+                 <Popup><Label>{this.props.use_area["0"].study_area}</Label></Popup>
+                 </GeoJSON>
+         : null)
         return (
             <div className='map-wrapper'>
                 <Map className='Map' center={[39.739800, -104.911276]} zoom={10} zoomControl={false} ref="map">
@@ -125,6 +143,7 @@ class MainMap extends Component {
                             polyline: false,
                             marker: false
                         }}/>
+                        {areaLayer}
                     </FeatureGroup>
                 </Map>
                 {

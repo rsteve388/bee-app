@@ -4,7 +4,11 @@ import * as actions from '../../store/actions'
 
 export const mapStateToProps = (state) => {
     const data = state.data;
+
+    const use_area = data.use_area;
+
     return {
+        use_area
     }
 }
 

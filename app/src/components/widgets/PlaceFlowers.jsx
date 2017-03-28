@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { mapStateToProps, mapDispatchToProps } from './selectors';
 import { connect } from 'react-redux';
-import {Subtitle, FormHorizontal, ControlLabel, Group, Notification, Button, Menu, MenuList} from 're-bulma';
-import Slider,  {Range} from 'rc-slider';
+import {Subtitle, Notification, Button, Menu, MenuList} from 're-bulma';
+import Slider from 'rc-slider';
 
 import './Widgets.css'
 import '../../../node_modules/rc-slider/assets/index.css';
@@ -14,6 +14,14 @@ class PlaceFlowers extends Component{
         this.state = {
             totalPlacement: 0
         }
+        this.runSimulation = this.runSimulation.bind(this)
+    }
+
+    runSimulation() {
+        let choseFlowers = this.props.use_plants
+        let choseArea = this.props.use_area
+
+        console.log(choseFlowers, choseArea)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -29,11 +37,6 @@ class PlaceFlowers extends Component{
     render(){
         var letterstyle = {color: "white"}
         const use_plants = this.props.use_plants.map((plant) => {
-            // const totalPlantPlacement = 0;
-            // plant.placement =+ totalPlantPlacement
-            //
-            // this.setState({totalPlacement: totalPlantPlacement})
-
             return <li key={"place-flower-"+plant.plant_id}>
                 <label>
                 {plant.plant_name}: {plant.plant_placement} %
@@ -54,8 +57,7 @@ class PlaceFlowers extends Component{
             </Menu>
             {this.state.totalPlacement > 100 ?
                 <Notification color="isDanger" className="placement-notification" size="is6">Sum of all flowers exceed 100% of available land, please alter the placement.</Notification> :
-                <Button color="isSuccess" className="run-btn">Run Simulation</Button>}
-            {/*<Button color="isSuccess" className="run-btn">Run Simulation</Button>*/}
+                <Button color="isSuccess" className="run-btn" onClick={this.runSimulation}>Run Simulation</Button>}
             </div>
     }
 }

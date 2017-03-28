@@ -14,4 +14,4 @@ export const ADD_FLOWER_DB = 'app/ADD_FLOWER_DB';
 export const REMOVE_FLOWER_DB = 'app/REMOVE_FLOWER_DB';
 export const ADD_AREA_DB = 'app/ADD_AREA_DB';
 export const REMOVE_AREA_DB = 'app/REMOVE_AREA_DB';
-
+export const RUN_SIMULATION = 'app/RUN_SIMULATION';

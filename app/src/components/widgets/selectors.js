@@ -60,6 +60,10 @@ export const mapDispatchToProps = (dispatch) => {
 
         removeAreaDB: (areaID) => {
             dispatch(actions.removeAreaDB(areaID))
+        },
+
+        runSimulation: (params) => {
+            dispatch(actions.runSimulation(params))
         }
     }
 }

@@ -3,11 +3,7 @@
  */
 import * as t from './action-types';
 
-import * as sql from 'sql.js';
-
 const electron = window.require('electron');
-const fs = electron.remote.require('fs');
-
 
 export const addFlower = (flower) => {
     return {
@@ -45,14 +41,14 @@ export const updatePlacement = (id, val) => {
             val: val
         }
     }
-}
+};
 
 export const connectDatabase = (path) => {
     return {
         type: t.CONNECT_DATABASE,
         dbDataPath: path
     }
-}
+};
 
 export const addFlowerDB = (newFlower) => {
     const newFlowerVals = newFlower
@@ -61,7 +57,7 @@ export const addFlowerDB = (newFlower) => {
         type: t.ADD_FLOWER_DB,
         newFlowerVals
     }
-}
+};
 
 export const removeFlowerDB = (flowerId) => {
     console.log('flower to be removed: ' + flowerId)
@@ -70,7 +66,7 @@ export const removeFlowerDB = (flowerId) => {
         type: t.REMOVE_FLOWER_DB,
         flowerId
     }
-}
+};
 
 export const addAreaDB = (newArea) => {
     console.log('area to be added: ' + newArea)
@@ -79,7 +75,7 @@ export const addAreaDB = (newArea) => {
         type: t.ADD_AREA_DB,
         newArea
     }
-}
+};
 
 export const removeAreaDB = (areaId) => {
     console.log('area to be removed: ' + areaId)
@@ -87,5 +83,14 @@ export const removeAreaDB = (areaId) => {
     return {
         type: t.REMOVE_AREA_DB,
         areaId
+    }
+};
+
+export const runSimulation = (params) => {
+    console.log('running simulation for the following params:' + params)
+
+    return {
+        type: t.RUN_SIMULATION,
+        params
     }
 }
