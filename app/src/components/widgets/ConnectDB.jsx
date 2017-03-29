@@ -22,8 +22,15 @@ class ConnectDB extends Component{
     }
 
     getpath() {
-        const path = document.getElementById("fileDB").files[0].path
-        this.props.loadDBFromDisk(path)
+        // const pathDB = document.getElementById("fileDB").files[0].path
+        // const pathGeoJSON = document.getElementById("fileGeoJSON").files[0].path
+
+        //TODO: Remove these
+        const pathDB = '/Users/ricardooliveira/GIS/bee_app/bee_db.db'
+        const pathGeoJSON = '/Users/ricardooliveira/GIS/bee_app/parcels.geojson'
+
+        this.props.loadDBFromDisk(pathDB)
+        this.props.loadGeoJSONFromDisk(pathGeoJSON)
         this.toggleModal()
     }
 
@@ -33,7 +40,7 @@ class ConnectDB extends Component{
         <i className="navbar-icon fa fa-database fa-2x" onClick={this.toggleModal}/>
             <Modal
                 type="card"
-                headerContent="Connect to a Database"
+                headerContent="Connect to Data Sources"
                 isActive={this.state.modalState}
                 onCloseRequest={() => this.setState({ modalState: false })}
             >
@@ -41,7 +48,10 @@ class ConnectDB extends Component{
                     Choose SQLite Database: <input id="fileDB" type="file"/>
                     <br />
                     <br />
-                    <Button color="isSuccess" onClick={this.getpath}>Load Database</Button>
+                    Choose GeoJSON File: <input id="fileGeoJSON" type="file"/>
+                    <br />
+                    <br />
+                    <Button color="isSuccess" onClick={this.getpath}>Load Data Sources</Button>
                 </Content>
             </Modal>
             </div>

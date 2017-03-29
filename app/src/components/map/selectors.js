@@ -4,11 +4,12 @@ import * as actions from '../../store/actions'
 
 export const mapStateToProps = (state) => {
     const data = state.data;
-
+    console.log(data)
     const use_area = data.use_area;
-
+    const intersected_polys = data.intersected_polys;
     return {
-        use_area
+        use_area,
+        intersected_polys
     }
 }
 

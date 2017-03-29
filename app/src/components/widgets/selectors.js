@@ -16,11 +16,18 @@ export const mapStateToProps = (state) => {
     const use_plants =  state.data.use_plants;
     const use_area = state.data.use_area;
 
+    let num_intersected_polys = state.data.intersected_polys != null ? state.data.intersected_polys.features.length : null;
+
+    let intersected_area = state.data.intersected_area != null ? state.data.intersected_area.toFixed(2) : null;
+
+
     return {
         plants_list: plants_list_arr,
         areas_list: areas_list_arr,
         use_plants,
-        use_area
+        use_area,
+        num_intersected_polys,
+        intersected_area
     }
 }
 
@@ -44,6 +51,10 @@ export const mapDispatchToProps = (dispatch) => {
 
         loadDBFromDisk: (path) => {
             dispatch(actions.connectDatabase(path))
+        },
+
+        loadGeoJSONFromDisk: (path) => {
+            dispatch(actions.connectGeoJSON(path))
         },
 
         addNewFlowerDB: (newFlower) => {

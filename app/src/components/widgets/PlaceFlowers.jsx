@@ -20,8 +20,12 @@ class PlaceFlowers extends Component{
     runSimulation() {
         let choseFlowers = this.props.use_plants
         let choseArea = this.props.use_area
-
-        console.log(choseFlowers, choseArea)
+        let paramObj = {
+            choseFlowers: choseFlowers,
+            choseArea: choseArea
+        }
+        console.log(paramObj)
+        this.props.runSimulation(paramObj)
     }
 
     componentWillReceiveProps(nextProps) {

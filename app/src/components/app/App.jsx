@@ -6,6 +6,7 @@ import FlowersList from '../widgets/FlowersList';
 import StudyAreasList from '../widgets/StudyAreaList';
 import PlaceFlowers from '../widgets/PlaceFlowers';
 import ConnectDB from '../widgets/ConnectDB';
+import Results from '../widgets/Results';
 import {Tile, Title, Subtitle} from 're-bulma'
 
 import './App.css';
@@ -58,7 +59,7 @@ class App extends Component {
                   </Tile>
                   <Tile context="isParent" size="is6">
                     <Tile context="isChild" style={style} className="result-tile">
-                      <Subtitle style={letterstyle}>Results</Subtitle>
+                      <Results/>
                     </Tile>
                   </Tile>
                 </Tile>

@@ -1,6 +1,9 @@
 import * as t from '../action-types';
 
 import * as sql from 'sql.js';
+import Intersect from 'turf-intersect';
+import Area from 'turf-area';
+import * as turf from 'turf';
 
 const electron = window.require('electron');
 const fs = electron.remote.require('fs');
@@ -10,13 +13,17 @@ const initialData = {
     study_areas: [],
     use_plants: [],
     use_area: [],
+    intersected_polys: null,
+    intersected_area: null,
     errorModal: false
 };
 
 export default (state = initialData, action) => {
     switch (action.type) {
         case t.ADD_FLOWER:
-            const newPlant = state.plants.filter(o => o.plant_id === action.flower)
+            console.log(state)
+            const newPlant = state.plants.filter(o => o.plant_id.toString() === action.flower.toString())
+            console.log(newPlant)
             newPlant["0"].plant_placement = '50'
 
             return {
@@ -25,7 +32,7 @@ export default (state = initialData, action) => {
             };
 
         case t.REMOVE_FLOWER:
-            const afterRemoved = state.use_plants.filter(o => o.plant_id !== action.flower)
+            const afterRemoved = state.use_plants.filter(o => o.plant_id.toString() !== action.flower.toString())
 
             return {
                 ...state,
@@ -33,18 +40,18 @@ export default (state = initialData, action) => {
             };
 
         case t.UPDATE_PLACEMENT:
-            const plantToUpdate = state.use_plants.filter(o => o.plant_id === action.update.id)
+            const plantToUpdate = state.use_plants.filter(o => o.plant_id.toString() === action.update.id.toString())
             plantToUpdate["0"].plant_placement = action.update.val
 
             return {
                 ...state,
-                use_plants: state.use_plants.map((plant) => plant.plant_id === action.update.id ? { ...plant,
+                use_plants: state.use_plants.map((plant) => plant.plant_id.toString() === action.update.id.toString() ? { ...plant,
                     plant_placement: action.update.val
                 } : plant)
             };
 
         case t.ADD_AREA:
-            const newArea = state.study_areas.filter(o => o.area_id === action.area)
+            const newArea = state.study_areas.filter(o => o.area_id.toString() === action.area.toString())
 
             return {
                 ...state,
@@ -56,7 +63,7 @@ export default (state = initialData, action) => {
             const db = new sql.Database(fileBuffer)
             const dbPath = action.dbDataPath
 
-            const parsedData = parseDB(db)
+            const parsedData = parseDB(db, dbPath)
 
             return {
                 ...state,
@@ -64,6 +71,18 @@ export default (state = initialData, action) => {
                 dbPath,
                 plants: parsedData[0],
                 study_areas: parsedData[1],
+            };
+
+        case t.CONNECT_GEOJSON:
+            const geoJSONFile = fs.readFileSync(action.geoJSONDataPath, 'utf8');
+
+            const parsedGeoJSON = JSON.parse(geoJSONFile);
+
+            // console.log(parsedGeoJSON)
+
+            return {
+                ...state,
+                parsedGeoJSON
             };
 
 
@@ -80,8 +99,6 @@ export default (state = initialData, action) => {
                 ':index': newFlowerIndexVal,
                 ':radius': newFlowerRadiusVal
             });
-
-
 
             //TODO: this is an ugly hack to persist the data. It works, though...
             fs.writeFile(loadedDBPath, loadedDB.export())
@@ -187,6 +204,17 @@ export default (state = initialData, action) => {
                 use_area: []
             };
 
+        case t.RUN_SIMULATION:
+            var params = action.params
+
+            let intersection = runSimulation(params, state)
+
+            return{
+                ...state,
+                intersected_polys: intersection[0],
+                intersected_area: intersection[1]
+            }
+
         default:
             return state
     }
@@ -245,12 +273,32 @@ function parseDB (db, dbPath){
   return [allFlowers, allAreas]
 }
 
-function runSimulation (params, db) {
-    //select and store the parcel geom form the database, or file
+function runSimulation (params, state) {
+    var studyArea = params.choseArea
+    var flowers = params.choseFlowers
 
     //INTERSECT study_area against parcels and calc total area
+    var studyAreaGeomFeature = JSON.parse(studyArea[0].geom)
 
+    var parcel = state.parsedGeoJSON
+    var parcelFeatures = parcel.features
+
+    console.log(parcelFeatures.length)
+
+    var conflictlist = [];
+    parcelFeatures.forEach( (feature) => {
+        var conflict = Intersect(feature, studyAreaGeomFeature);
+        if (conflict != null) {
+            conflictlist.push(conflict);
+        }
+    });
+
+    var intersectiontest = turf.featureCollection(conflictlist);
+
+    var areaSqMeters = Area(intersectiontest)
     //Generate geometries for each plant based on the plant_radius
 
     //Do some magic to get final score
+
+    return [intersectiontest, areaSqMeters]
 }

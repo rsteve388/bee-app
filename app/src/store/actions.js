@@ -3,8 +3,6 @@
  */
 import * as t from './action-types';
 
-const electron = window.require('electron');
-
 export const addFlower = (flower) => {
     return {
         type: t.ADD_FLOWER,
@@ -47,6 +45,13 @@ export const connectDatabase = (path) => {
     return {
         type: t.CONNECT_DATABASE,
         dbDataPath: path
+    }
+};
+
+export const connectGeoJSON = (path) => {
+    return {
+        type: t.CONNECT_GEOJSON,
+        geoJSONDataPath: path
     }
 };
 

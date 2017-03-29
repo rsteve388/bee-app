@@ -95,7 +95,6 @@ class MainMap extends Component {
     }
 
     _mounted(drawControl) {
-        console.log(drawControl)
         drawHandlerObj = drawControl._toolbars.draw._modes.rectangle.handler;
     }
 
@@ -112,12 +111,9 @@ class MainMap extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        console.log(this.refs.layergroup.leafletElement)
         if (this.refs.layergroup.leafletElement._leaflet !== undefined) {
             this.refs.layergroup.leafletElement.removeLayer(this.refs.layergroup.leafletElement._layers[0]._layers[0]);
         }
-        console.log(this.refs.layergroup.leafletElement)
-
     }
 
 
@@ -126,11 +122,18 @@ class MainMap extends Component {
         if (this.props.use_area.length > 0 ) {
             console.log(this.props.use_area)
         }
+        if (this.props.intersected_polys != null ) {
+            console.log(this.props.intersected_polys)
+        }
         const areaLayer = (this.props.use_area.length > 0 ?
              <GeoJSON key={this.props.use_area["0"].area_id} data={JSON.parse(this.props.use_area["0"].geom)}>
                  <Popup><Label>{this.props.use_area["0"].study_area}</Label></Popup>
                  </GeoJSON>
          : null)
+        const intersectedLayer = (this.props.intersected_polys != null ?
+            <GeoJSON key={Math.random()} data={this.props.intersected_polys}>
+            </GeoJSON>
+            : null)
         return (
             <div className='map-wrapper'>
                 <Map className='Map' center={[39.739800, -104.911276]} zoom={10} zoomControl={false} ref="map">
@@ -144,6 +147,7 @@ class MainMap extends Component {
                             marker: false
                         }}/>
                         {areaLayer}
+                        {intersectedLayer}
                     </FeatureGroup>
                 </Map>
                 {
