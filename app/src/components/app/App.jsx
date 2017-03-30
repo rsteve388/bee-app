@@ -22,7 +22,7 @@ class App extends Component {
       <div className="App">
           <header className="navbar navbar-default header">
               {/*<div className="title">Bee Caring Capacity</div>*/}
-              <Title className="title">BEE CARRYING CAPACITY</Title>
+              <Title className="title">BEE CARRYING CAPACITY TOOLKIT</Title>
             <ConnectDB className="navbar-icon"/>
             {/*<i className="navbar-icon fa fa-database fa-2x title"/>*/}
           </header>
@@ -63,8 +63,6 @@ class App extends Component {
                     </Tile>
                   </Tile>
                 </Tile>
-
-
               </Tile>
             </Tile>
           </Tile>

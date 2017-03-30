@@ -40,7 +40,6 @@ export const mapDispatchToProps = (dispatch) => {
         },
 
         toggleArea: (e) => {
-            console.log(e.target)
             const area = e.target.id;
             dispatch(e.target.checked ? actions.addArea(area) : actions.removeArea(area))
         },

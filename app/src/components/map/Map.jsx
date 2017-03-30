@@ -111,20 +111,22 @@ class MainMap extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        if (this.refs.layergroup.leafletElement._leaflet !== undefined) {
-            this.refs.layergroup.leafletElement.removeLayer(this.refs.layergroup.leafletElement._layers[0]._layers[0]);
-        }
+        // if (this.refs.layergroup.leafletElement._leaflet !== undefined) {
+        //     console.log(this.refs.layergroup.leafletElement)
+        //     this.refs.layergroup.leafletElement.removeLayer(this.refs.layergroup.leafletElement._layers[0]._layers[0]);
+        // }
+    }
+
+    componentDidUpdate(){
+        let layergroup = this.refs.layergroup.leafletElement._layers
+        let layer = layergroup[Object.getOwnPropertyNames(layergroup)[0]]._layers
+        let layerBounds = layer[Object.getOwnPropertyNames(layer)[0]]._bounds
+        this.refs.map.leafletElement.fitBounds(layerBounds)
     }
 
 
     render() {
         // clean this, make (this.props.use_area a variable and re-use it, fill area popup
-        if (this.props.use_area.length > 0 ) {
-            console.log(this.props.use_area)
-        }
-        if (this.props.intersected_polys != null ) {
-            console.log(this.props.intersected_polys)
-        }
         const areaLayer = (this.props.use_area.length > 0 ?
              <GeoJSON key={this.props.use_area["0"].area_id} data={JSON.parse(this.props.use_area["0"].geom)}>
                  <Popup><Label>{this.props.use_area["0"].study_area}</Label></Popup>

@@ -11,10 +11,12 @@ class Results extends Component{
         var letterstyle = {
             color: "white"
         };
+        var num_intersected_polys = this.props.num_intersected_polys;
+        var intersected_area = this.props.intersected_area;
         return <div>
             <Subtitle style={letterstyle}>Results</Subtitle>
-            <p>Total number of parcels inside the study area is: {this.props.num_intersected_polys}</p>
-            <p>Total area is: {this.props.intersected_area}</p>
+            {num_intersected_polys && <p>Total number of parcels inside the study area is: {num_intersected_polys}</p>}
+            {intersected_area && <p>Total area is: {intersected_area} square meters.</p>}
         </div>
     }
 

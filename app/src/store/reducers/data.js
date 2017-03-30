@@ -296,6 +296,7 @@ function runSimulation (params, state) {
     var intersectiontest = turf.featureCollection(conflictlist);
 
     var areaSqMeters = Area(intersectiontest)
+
     //Generate geometries for each plant based on the plant_radius
 
     //Do some magic to get final score
